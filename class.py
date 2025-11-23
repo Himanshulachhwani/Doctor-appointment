@@ -1,4 +1,5 @@
-from datetime import datetime as dt
+# from datetime import datetime as dt
+import dictionary
 
 
 class clinic():
@@ -15,14 +16,21 @@ class clinic():
 
 reason = int(
     input("Reason for Consultation: \n1.New Appointment \n2.Followup \n(1 or 2):"))
+name = input("Enter your name: ")
+ph_no = input("Enter your mobile number: ")
+
+
 if reason == 1:
     print("--New Appointment--")
     date = input("Enter the date for appointment(dd:mm:yyyy):")
-    diagnosis = input("Kindly describe the problem you are facing: \n"
-                      "1.General\n"
-                      "2.Orthopedic(Bone-related)\n"
-                      "3.Heart-related\n"
-                      "4.\n")
+    diagnosis = int(input("Kindly describe the problem you are facing: \n"
+                          "1. General\n"
+                          "2. Orthopedic(Bone-related)\n"
+                          "3. Heart-related\n"
+                          "4. Other\n"
+                          "5. Request a Diagnosis")
+                    )
+    if diagnosis == 1:
 
 
 elif reason == 2:
