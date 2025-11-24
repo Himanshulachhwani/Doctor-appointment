@@ -20,3 +20,7 @@ Dictionaries used to save doctors and their slots
 
 <img width="1007" height="484" alt="image" src="https://github.com/user-attachments/assets/7d058694-d1a8-48ab-a506-97a39d334504" />
 Loops with conditional statements
+
+<img width="638" height="702" alt="image" src="https://github.com/user-attachments/assets/cac385dc-7ad3-469a-a723-218916769829" />
+Example Output
+
