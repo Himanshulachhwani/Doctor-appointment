@@ -28,13 +28,20 @@ diagnosis = {"doctor1": "13:30 to 14:30",
 i = 1
 # used while loop and conditional statements
 while i == 1:
+    date = input("Enter the date for appointment(DD:MM:YYYY) : ")
     reason = int(input(
         "Reason for Consultation: \n1.New Appointment \n2.Follow-up \n3.Check Appointment Status \n4. End process \n(1, 2, 3, 4):"))
 
     if reason == 1:
         print("--New Appointment--")
         name = input("Enter your name: ")
-        ph_no = input("Enter your mobile number: ")
+        p = 1
+        while p == 1:
+            ph_no = input("Enter your mobile number: ")
+            if len(ph_no) == 10:
+                p = 0
+            else:
+                print("Invalid number, Try again")
         appointment_no = random.randint(1000, 9999)
         display = print(
             f"Your Appointment number is {appointment_no}\n Please save it for future references.")
@@ -103,12 +110,14 @@ while i == 1:
     elif reason == 2:
         print("--Followup--")
         app_no = int(input("Enter your appointment number: "))
-        if app_no == appointment_no:
-            print("You may proceed")
-            continue
-        elif app_no != appointment_no:
-            print("Appointment number unrecognised \n TRY AGAIN!!!")
-            break
+        l = 1
+        while l == 1:
+            if app_no == appointment_no:
+                print("You may proceed")
+                l = 0
+            elif app_no != appointment_no:
+                print("Appointment number unrecognised \n TRY AGAIN!!!")
+
         n2 = int(input("Who would you to like to consult for the follow-up\n"
                        "1. General Surgeon\n"
                        "2. Orthopedic\n"
@@ -121,13 +130,15 @@ while i == 1:
             if slot == 1:
                 time = [t for t in general_sur.values()]
                 doctor = [d for d in general_sur.keys()]
+                f = 0
                 print(
-                    f"your follow-up appointment is booked with {doctor[0]} for {time[0]}")
+                    f"your follow-up appointment is booked with {doctor[f]} for {time[f]}")
             elif slot == 2:
                 time = [t for t in general_sur.values()]
                 doctor = [d for d in general_sur.keys()]
+                f = 1
                 print(
-                    f"your follow-up appointment is booked with {doctor[1]} for {time[1]}")
+                    f"your follow-up appointment is booked with {doctor[f]} for {time[f]}")
 
         elif n2 == 2:
             slot = int(
