@@ -14,7 +14,6 @@ class clinic():
         self.appointment_no = appointment_no
 
 
-date = input("Enter the date for appointment(DD:MM:YYYY) : ")
 # doctors(used dictionaries)
 general_sur = {"doctor1": "08:30 to 09:30",
                "doctor2": "12:30 to 13:30"}
@@ -28,12 +27,12 @@ diagnosis = {"doctor1": "13:30 to 14:30",
 i = 1
 # used while loop and conditional statements
 while i == 1:
-    date = input("Enter the date for appointment(DD:MM:YYYY) : ")
     reason = int(input(
         "Reason for Consultation: \n1.New Appointment \n2.Follow-up \n3.Check Appointment Status \n4. End process \n(1, 2, 3, 4):"))
 
     if reason == 1:
         print("--New Appointment--")
+        date = input("Enter the date for appointment(DD:MM:YYYY) : ")
         name = input("Enter your name: ")
         p = 1
         while p == 1:
@@ -109,6 +108,7 @@ while i == 1:
 
     elif reason == 2:
         print("--Followup--")
+        date = input("Enter the date for appointment(DD:MM:YYYY) : ")
         app_no = int(input("Enter your appointment number: "))
         l = 1
         while l == 1:
@@ -168,7 +168,7 @@ while i == 1:
                 print(
                     f"your follow-up appointment is booked with {doctor[1]} for {time[1]}")
 
-        elif n == 4:
+        elif n2 == 4:
             slot = int(
                 input(f"Select the slot you would like: \n{diagnosis}\n"))
             if slot == 1:
