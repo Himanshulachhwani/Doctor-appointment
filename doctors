@@ -28,24 +28,21 @@ diagnosis = {"doctor1": "13:30 to 14:30",
 i = 1
 # used while loop and conditional statements
 while i == 1:
-    reason = int(
-        input("Reason for Consultation: \n1.New Appointment \n2.Follow-up \n3.Check Appointment Status \n4. End process \n(1, 2, 3, 4):"))
+    reason = int(input(
+        "Reason for Consultation: \n1.New Appointment \n2.Follow-up \n3.Check Appointment Status \n4. End process \n(1, 2, 3, 4):"))
 
     if reason == 1:
         print("--New Appointment--")
         name = input("Enter your name: ")
         ph_no = input("Enter your mobile number: ")
         appointment_no = random.randint(1000, 9999)
-        n = int(input("Kindly describe the problem you are facing: \n"
-                      "1. General\n"
-                      "2. Orthopedic(Bone-related)\n"
-                      "3. Heart-related\n"
-                      "4. Other\n"
-                      "5. Request a Diagnosis"))
+        display = print(
+            f"Your Appointment number is {appointment_no}\n Please save it for future references.")
+        n = int(input("Kindly describe the problem you are facing: \n1. General\n2. Orthopedic(Bone-related)\n3. Heart-related\n4. Other\n5. Request a Diagnosis\n "))
 
         if n == 1:
             slot = int(
-                input(f"Select the slot you would like: \n{general_sur}"))
+                input(f"Select the slot you would like: \n{general_sur}\n"))
             if slot == 1:
                 time = [t for t in general_sur.values()]
                 doctor = [d for d in general_sur.keys()]
@@ -59,7 +56,7 @@ while i == 1:
 
         elif n == 2:
             slot = int(
-                input(f"Select the slot you would like: \n{orthopedic}"))
+                input(f"Select the slot you would like: \n{orthopedic}\n"))
             if slot == 1:
                 time = [t for t in orthopedic.values()]
                 doctor = [d for d in orthopedic.keys()]
@@ -73,7 +70,7 @@ while i == 1:
 
         elif n == 3:
             slot = int(
-                input(f"Select the slot you would like: \n{cardiologist}"))
+                input(f"Select the slot you would like: \n{cardiologist}\n"))
             if slot == 1:
                 time = [t for t in cardiologist.values()]
                 doctor = [d for d in cardiologist.keys()]
@@ -88,7 +85,8 @@ while i == 1:
         elif n == 4:
             print("Please refer to the general surgeon or get a diagnosis")
         elif n == 5:
-            slot = int(input(f"Select the slot you would like: \n{diagnosis}"))
+            slot = int(
+                input(f"Select the slot you would like: \n{diagnosis}\n"))
             if slot == 1:
                 time = [t for t in diagnosis.values()]
                 doctor = [d for d in diagnosis.keys()]
@@ -108,19 +106,18 @@ while i == 1:
         if app_no == appointment_no:
             print("You may proceed")
             continue
-        else:
+        elif app_no != appointment_no:
             print("Appointment number unrecognised \n TRY AGAIN!!!")
             break
-
         n2 = int(input("Who would you to like to consult for the follow-up\n"
                        "1. General Surgeon\n"
                        "2. Orthopedic\n"
                        "3. Cardiologist\n"
-                       "4. Diagnosis Follow-up"
+                       "4. Diagnosis Follow-up\n"
                        ))
         if n2 == 1:
             slot = int(
-                input(f"Select the slot you would like: \n{general_sur}"))
+                input(f"Select the slot you would like: \n{general_sur}\n"))
             if slot == 1:
                 time = [t for t in general_sur.values()]
                 doctor = [d for d in general_sur.keys()]
@@ -134,7 +131,7 @@ while i == 1:
 
         elif n2 == 2:
             slot = int(
-                input(f"Select the slot you would like: \n{orthopedic}"))
+                input(f"Select the slot you would like: \n{orthopedic}\n"))
             if slot == 1:
                 time = [t for t in orthopedic.values()]
                 doctor = [d for d in orthopedic.keys()]
@@ -148,7 +145,7 @@ while i == 1:
 
         elif n2 == 3:
             slot = int(
-                input(f"Select the slot you would like: \n{cardiologist}"))
+                input(f"Select the slot you would like: \n{cardiologist}\n"))
             if slot == 1:
                 time = [t for t in cardiologist.values()]
                 doctor = [d for d in cardiologist.keys()]
@@ -161,7 +158,8 @@ while i == 1:
                     f"your follow-up appointment is booked with {doctor[1]} for {time[1]}")
 
         elif n == 4:
-            slot = int(input(f"Select the slot you would like: \n{diagnosis}"))
+            slot = int(
+                input(f"Select the slot you would like: \n{diagnosis}\n"))
             if slot == 1:
                 time = [t for t in diagnosis.values()]
                 doctor = [d for d in diagnosis.keys()]
@@ -172,8 +170,9 @@ while i == 1:
                 doctor = [d for d in diagnosis.keys()]
                 print(
                     f"your follow-up appointment is booked with {doctor[1]} for {time[1]}")
-        else:
-            print("Invalid choice")
+
+            else:
+                print("Invalid choice")
 
     elif reason == 3:
         app_no = int(input("Enter your appointment number: "))

@@ -1,8 +1,0 @@
-general_sur = {"doctor1": "08:30 to 09:30",
-               "doctor2": "12:30 to 13:30"}
-orthopedic = {"doctor1": "10:30 to 11:30",
-              "doctor2": "14:30 to 15:30"}
-cardiologist = {"doctor1": "09:30 to 10:30",
-                "doctor2": "11:30 to 12:30"}
-diagnosis = {"doctor1": "13:30 to 14:30",
-             "doctor2": "15:30 to 16:30"}
